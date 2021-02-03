@@ -1,0 +1,21 @@
+.first {
+	color: darkblue;
+	text-shadow: 0px 0px 5px red;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+}
+.second {
+	color: black;
+	text-shadow: 2px 2px 5px black;
+	font-style: italic;
+	text-align: center;
+}
+p {
+	color: darkblue;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+}
+
+	
