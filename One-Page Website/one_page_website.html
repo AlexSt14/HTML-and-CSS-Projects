@@ -1,55 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<meta charset="utf-8">
 		<title>Best 3 places to travel</title>
+		<link rel="stylesheet" href="./css/stylesheet.css">
 	</head>
 	
 	<body>
 	
 	<!-- HEADER WITH BOOKMARK LINKS -->
-
-		<div class="Bookmarks">
-			<div>
-				<p><b><a href="#Photo Section">Go To Photo Section</a></b></p>
-				<p><b><a href="#Video Section">Go To Video Section</a></b></p>
-				<p><b><a href="#Contact">Go to Contact Form</a></b></p>
+		<div class="wrap">
+			<div class="bookmarks">
+				<ul class="menu_bookmarks">
+					<a href="#home"><li>&nbsp;Home&nbsp;</li></a>
+					<a href="#photo"><li>Photos</li></a>
+					<a href="#Video Section"><li>Video</li></a>
+					<a href="#Contact"><li>Contact</li></a>
+				</ul>
 			</div>
+		</div>
 		
 		<!-- BEST PLACES TO TRAVEL -->
 		
-			<div>
-				<style>
-					h1, .center {
-						text-align: center;
-					}
-					.Best, .details {
-						margin: 3px;
-						padding: 5px;
-						background-color: Linen;
-					}
-					.photos, .videos, .contact {
-						background-color: Linen;
-					}
-					.Bookmarks {
-						background-color: AntiqueWhite;
-					}
-				</style>
-				<h1 class="Best"><span style="color:DarkRed">Best 3 places in the world where you can travel</h1> 
-			</div>
+		<div id="home">
+			<h1 class="Best">Best 3 places in the world<br> where you can travel!</h1> 
+		</div>
+		<div>
 			<ol class="details">
-				<li class="details"><h2><span style="color:red">South Island, New Zealand</span></h2><br>
+				<li class="details"><h2>South Island, New Zealand</h2><br>
 					<p>New Zealand's South Island brims with majestic landscapes at every turn, from dramatic mountains to fjords to glaciers. Here, you can explore Fiordland National Park, a UNESCO World 
 						Heritage Area, or gaze at the starry skies at Mount John Observatory. You can also indulge your inner daredevil in Queenstown, explore two of the most accessible glaciers in the world on the 
 						country's west coast or sample delicious food and wine in the Marlborough region.</p>
 				</li>
-				<li><h2><span style="color:red">Paris</span></h2><br>
+				<li><h2>Paris</h2><br>
 					<p>Every day, the magnetic City of Light draws visitors from around the globe who come to see iconic attractions like the Eiffel Tower, the Louvre and the Arc de Triomphe. But what travelers 
 						really fall in love with are the city's quaint cafes, vibrant markets, trendy shopping districts and unmistakable je ne sais quoi charm. Get lost wandering along Paris' cobblestone streets, 
 						or grab a croissant and relax on the banks of the Seine for hours.</p><br>
 					<details>
 						<summary>Read More</summary>
-							<h2>Why Go To Paris</h2>
+							<h2 class="read_more">Why Go To Paris</h2>
 							<p>The City of Light draws millions of visitors every year with its unforgettable ambiance. Of course, the divine cuisine and vast art collections deserve some of the credit as well. 
 								The gentle River Seine rambles through the city, flanked by stately museums, centuries-old churches, and blocks of Rococo- and Neoclassic-design architecture, further enhanced by cascading 
 								trees and glowing streetlamps. Peppering the Seine's cobbled walks and graceful bridges are impossibly chic Parisians, probably on their way to the market, cafe or cinema.<br>
@@ -65,7 +55,7 @@
 						and soft sand. Although a trip to Bora Bora is very expensive, most travelers say it's worth every penny.</p></br>
 					<details>
 						<summary>Read More</summary>
-							<h2>Why Go To Bora Bora</h2>
+							<h2 class="read_more">Why Go To Bora Bora</h2>
 							<p>The small island of Bora Bora (just about 6 miles long and a little more than 2 miles wide) overflows with beauty. A dormant volcano rises up at its center and fans out into lush jungle before 
 								spilling into an aquamarine lagoon. In fact, author James Michener, who wrote "Tales of the South Pacific," called Bora Bora "the most beautiful island in the world." The 18th-century British explorer James Cook 
 								even coined it as the "Pearl of the Pacific." The very definition of a tropical getaway, blissful Bora Bora abounds with luxurious <a href="https://travel.usnews.com/Hotels/Munich_Germany/">resorts</a>, sunny skies, warm waters and friendly locals.<br>
@@ -78,32 +68,32 @@
 			
 			<!-- SECTION WITH PICTURES -->
 			
-			<div class="photos">
-				<h1 id="Photo Section"><span style="color:DarkRed">Pictures Section for the Best 3 Places to Travel</span></h1>
+			<div class="photos" id="photo">
+				<h1 id="photo"><span style="color:DarkRed">Pictures Section for the Best 3 Places to Travel</span></h1>
 				<div>
-					<table>
+					<table class="photo_container">
 						<tr>
 							<th>Bora Bora</th>
 							<th>New Zealand</th>
 						</tr>
-						<tr>
-							<th><img src="bora_bora.jpg" alt="Island"></th>
-							<th><img src="new_zealand.jpg" alt="New Zealand" width="525" height="350"></th>
+						<tr class="hover">
+							<th class="photo"><img src="bora_bora.jpg" alt="Island"></th>
+							<th class="photo"><img class="photo" src="new_zealand.jpg" alt="New Zealand" width="525" height="390"></th>
 						</tr>
 						<tr>
 							<th>Paris</th>
 							<th>Bora Bora</th>
-						<tr>
-							<th><img src="paris.jpg" alt="Paris" width="525" height="350"></th>
-							<th><img src="bora_bora2.webp" alt="Bora Bora" width="525" height="350"></th>
+						<tr class="hover">
+							<th class="photo"><img src="paris.jpg" alt="Paris" width="525" height="350"></th>
+							<th class="photo"><img src="bora_bora2.webp" alt="Bora Bora" width="525" height="350"></th>
 						</tr>
 						<tr>
 							<th>Paris</th>
 							<th>New Zealand</th>
 						</tr>
-						<tr>
-							<th><img src="paris2.jpg" alt="Paris" width="525" height="350"></th>
-							<th><img src="new_zealand2.jpg" alt="New Zealand" width="525" height="350"></th>
+						<tr class="hover">
+							<th class="photo"><img src="paris2.jpg" alt="Paris" width="525" height="350"></th>
+							<th class="photo"><img src="new_zealand2.jpg" alt="New Zealand" width="525" height="350"></th>
 						</tr>
 					</table>
 				</div>
@@ -133,14 +123,15 @@
 			<!-- CONTACT FORM -->
 			
 			<div class="contact" id="Contact">
-				<h1><span style="color:darkred">If you wish to contact us with a short message, please complete the form below!</span></h1>
+				<p>If you wish to contact us with a short message, please complete the form below!</p>
 				<form action="" method="post">
-					Name: <input type="text" name="First Name"><br>
-					Email Address: <input type="text" name="Email address"><br>
-					Phone Number: <input type="text" name="Phone Number"><br>
-					Message: <input type="text" name="Message"><br>
+					<input type="text" value="" placeholder="First Name"><br>
+					<input type="text" value="" placeholder="Email address"><br>
+					<input type="text" value="" placeholder="Phone Number"><br>
+					<input class="message" type="text" value="" placeholder="Message"><br>
+					<div class="submit">
 					<input type="submit" value="Submit">
-									
+					</div>			
 				</form>
 			</div>
 		</div>
