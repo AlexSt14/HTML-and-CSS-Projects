@@ -6,3 +6,6 @@ input[type="email"] {
     width: 51%;
     z-index: 100;
 }
+.navbar-nav li:hover {
+    background-color: rgba(129, 129, 129, 0.4);
+}
