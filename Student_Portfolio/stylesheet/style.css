@@ -410,7 +410,7 @@ h1::after {
         text-align: center;
         margin-right: auto;
         margin-left: auto;
-        
+        top: 0;
     }
     .sidebar li {
         display: inline-block;
