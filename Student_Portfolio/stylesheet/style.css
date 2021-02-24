@@ -217,7 +217,7 @@ q {
     .Navbar a {
         width: 25%;  /* This makes each link take up 1/4 of the navbar */
         font-size: 12px;  /* This lowers the font size for screen width lower than 576px */
-        margin-right: 0;
+        margin-right: 0; /* This removes the margin-right so that it looks good on phone screens */
     }
 }
 
