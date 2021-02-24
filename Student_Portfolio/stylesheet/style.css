@@ -147,7 +147,7 @@ q {
 /* Screens that are 576px and smaller will not dsiplay the background video  */
 @media screen and (max-width: 576px) {
     #Coding_video {
-        display: none;
+        left: -179vw;
     }
 }
 
