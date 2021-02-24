@@ -144,7 +144,7 @@ q {
     z-index: -1;  /*  This places the video behind the other elements on the page  */
 }
 
-/* Screens that are 576px and smaller will not dsiplay the background video  */
+/* Screens that are 576px and smaller will adjust the video display  */
 @media screen and (max-width: 576px) {
     #Coding_video {
         left: -215vw;
