@@ -15,39 +15,19 @@ h1 {
 
 /* Paragraph elements */
 .heading {
-    font-family: 'Lucida Console', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 1.45em;
-    letter-spacing: .5px;
 }
 
 p {
-    font-family: 'Lucida Console', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 1.25em;
-    letter-spacing: .5px;
+    color: rgb(105, 105, 105);
 }
 
-.animation {
-    font-family: Perpetua, Rockwell Extra Bold;
-    text-align: justify;  /*  Justify text within paragraph elements  */
-    letter-spacing: 1px;  /*  This expands the text slightly  */
-    font-size: 1.35em;
-    padding-left: 20px;  /* Adds padding to the left of the paragraph element */
-    padding-right: 20px; /* Adds padding to the right of the paragraph element */
-    position: relative;  /* Sets the text relative to its normal positioning, allowing us to use the animation below  */
-    text-shadow: 2px 1px 5px rgba(0,0,0,0.5);  /* Adds a shadow to the text */
-}
-
-/* Paragraph element hover effect */
-.animation:hover {
-    position: relative;  /*  This sets the text relative to its normal positioning, allowing us to use the animation below  */
-    -webkit-animation: moveP 100s;  /*  Animation for Safari 4.0 - 8.0  */
-    animation: moveP 1000s;  /*  Applies the moveP animations for 1000s  */
-    text-shadow: 4px 7px 6px rgba(0,0,0,0.6);  /* Adds a shadow to the text when hovered over  */
-}
-
-@keyframes moveP {
-    from {top: -0.3vw;}  /*  Defines the starting position of the animation  */
-    to {top: -0.3vw;}  /*  Defines the ending position of the animation  */
+.quote {
+    font-family: 'Helvetica', sans-serif;
+    color: rgb(238, 238, 238);
 }
 
 /*  Center class - this applies to all elements with the class "center"  */
@@ -55,15 +35,9 @@ p {
     text-align: center;  /*  This center aligns the text  */
 }
 
-/*  Center class hover effect - This only affects the quote, github link, and footer  */
-.GithublinkFooter:hover {
-    transition: transform 2s;  /*  This makes the transform effect last 2 seconds  */
-    transform: scale(1.05);  /*  This makes the elements with class "center" increase in size by 1.05 when hovered over */
-}
-
 /*  Anchor elements  */
 a {
-    color: rgb(0, 4, 226);  /*  This ensures all links are blue  */
+    color: blue;
 }
 
 /* Quotation elements */
@@ -71,6 +45,30 @@ q {
     font-style: italic;  /* This makes the quote italicized */
 }
 
+/* This targets the heading paragraph from about page */
+.heading {
+    color: rgb(43, 43, 43);
+}
+
+/* Targets the first paragraph before the github image on the homepage */
+.firstp {
+visibility: visible;
+}
+/*Targets the second paragraph before the github image on the homepage */
+.ontop {
+    visibility: hidden;
+}
+
+/* Targets the two paragraphs before the GitHub Image on the homepage */
+@media screen and (max-width: 500px) {
+    .firstp {
+        visibility: hidden;
+    }
+    .ontop {
+        visibility: visible;
+        margin-top: -17vw;
+    }
+}
 /* Image elements */
 .imgcenter {
     filter: grayscale(70%);  /* This rids our picture of 60% of theyr color */
@@ -78,33 +76,47 @@ q {
     margin-left: auto;  /* This sets the left margin auto */
     margin-right: auto;  /* This sets the right margin auto */
     display: block;  /* This sets the display to block, allowing us to center the image */
-    box-shadow: 6px 6px 6px rgba(0,0,0,0.4);  /* This gives a shadow to images */
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);  /* This gives a shadow to images */
 }
 
+/* This targets the github image in the homepage */
 #center {
     filter: grayscale(70%);
-    border-radius: 8px;
-}
-
-.scale {
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-}
-
-/* This targets just the github image as the image already had a box-shadow */
-#center {
+    border-radius: 4px;
     margin-left: auto;  /* This sets the left margin auto */
     margin-right: auto;  /* This sets the right margin auto */
     display: block;  /* This sets the display to block, allowing us to center the image */
     position: relative;  /* This sets the image relative to its position, allowing us to use the animation below */
 }
 
+/* Targets the GitHub image when screen is 576px or less */
+@media screen and (max-width: 576px) {
+    #center  {
+        width: 230px;
+        height: 230px;
+    }
+}
+/* This targets all the images with scale class in the about page */
+.scale {
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
 /* Image element hover effects */
 .imgcenter:hover {
     filter: grayscale(5%);  /* This gives back some color to the image when hovered over */
-    transition: transform 1s;  /* Transition lasts 1 second */
-    transform: scale(1.1);  /* Image is increased slightly when hovered over */
+    -webkit-animation: moveUp 1000s; /* Animation for Safari 4.0-8.0 */
+    animation: moveUp 1000s; /* Animation for all other browsers */
+    box-shadow: 6px 16px 10px rgba(0,0,0,0.5);
+    position: relative;
 }
 
+/* This animation is for images on homepage excluding the github image */
+@keyframes moveUp {
+    from {top: -0.6vw;}
+    to {top: -0.6vw;}
+}
+
+/* This targets all the images with scale class in the about page */
 .scale:hover {
     transition: transform 1s;
     transform: scale(1.3);
@@ -147,8 +159,8 @@ q {
 /* Screens that are 576px and smaller will adjust the video display  */
 @media screen and (max-width: 576px) {
     #Coding_video {
-        left: -215vw;
-        top: -22.5vw;
+        left: -231vw;
+        top: -30.5vw;
     }
 }
 
@@ -159,8 +171,8 @@ q {
     padding: 20px;  /*  This adds padding around the video-text container so that the background goes slightly beyound the text  */
     color: white;  /*  Makes the font color white  */
     position: relative;  /*  This sets the text relative to its normal positioning, allowing us to use the animation below  */
-    -webkit-animation: moveVideoText 5.75s;  /*  Animation for Safari 4.0 - 8.0  */
-    animation: moveVideoText 5.75s;  /*  Applies the moveNavText animation for 5.75s  */
+    -webkit-animation: moveVideoText 3s;  /*  Animation for Safari 4.0 - 8.0  */
+    animation: moveVideoText 3s;  /*  Applies the moveNavText animation for 5.75s  */
 }
 
 /*  This animation effect causes the overlay video text to move up from the top of the page upon page load  */
@@ -180,15 +192,7 @@ q {
     position: fixed;  /* This keeps the navbar at the top of the screen as we scroll */
     top: 0;  /* This ensures no space is displayed above the navbar */
     width: 100%;  /* This makes the navbar span the entire width of the page */
-    z-index: 2;  /* This ensures other elements don't display over the navbar */
-    -webkit-animation: moveNav 5s;  /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
-    animation: moveNav 5s;  /* This applies the moveNav animation for all other browsers */ 
-}
-
-/* moveNav animation effect for moving the nav bar in from the left of the screen */
-@keyframes moveNav {
-    from {left: -100vw;}  /* The navbar is starting off screen to the left */
-    to {left: 0vw;}  /* This moves the navbar into place on the screen */
+    z-index: 20;  /* This ensures other elements don't display over the navbar */ 
 }
 
 /* Navbar links */
@@ -202,15 +206,6 @@ q {
     font-family: 'Helvetica', sans-serif;  /* This specifies the font family for the text on our navbar */
     font-size: 20px; /* This specifies the font size for text on our navbar */
     text-align: center;  /* This centers the text within its container on the navbar */
-    position: relative;  /* This sets the text relative to its normal positioning, allowing us to use the animation below */
-    -webkit-animation: moveNavText 5.75s;  /* Animation for Safari 4.0 - 8.0 */
-    animation: moveNavText 5.75s;  /* Applies the moveNavText animation for 5.75s for all other browsers */
-}
-
-/* moveNavText animation effect for moving the navbar text from above the view to the navbar */
-@keyframes moveNavText {
-    from {top: -100vw;}  /* This sets the navbar text 100% above the viewport */
-    to {top: 0vw}  /* This lowers the navbar text onto the navbar */
 }
 
 /* Screens 576px and smaller will display navbar links equally distributed */
@@ -245,7 +240,7 @@ q {
 /**** CONTENT STYLING ****/
 /* This will style the main container of the content */
 .container-fluid {
-    background-color: #e7e7e7;
+    background-color: #f5f5f5;
     display: flex;
 }
 
@@ -260,7 +255,7 @@ h3::before {
     content: "";
     height: 2px;
     width: 70%;
-    background: #E91C1C;
+    background: #790303;
     margin:  5px auto 40px;
     box-shadow: 5px 2px 3px rgba(128, 128, 128, 0.6);
 }
@@ -275,7 +270,7 @@ h4::before {
 }
 
 h1::after {
-    background-color: #E91C1C;
+    background-color: #790303;
     content: "";
     display: block;
     height: 5px;
@@ -290,8 +285,9 @@ h1::after {
 
 /**** Before footer and Footer Styling ****/
 /* Targets the HTML em tag */
-#beforefooter em {
+#beforefooter li em {
     color: #5c5c5c;  /* This sets the color of the text */
+    text-align: center;
 }
 
 /* Targets the icons in the container before the footer */
@@ -302,6 +298,7 @@ h1::after {
 
 #beforefooter li {
     display: inline-block;
+    padding: 0 50px;
 }
 
 /* This targets the icons in the footer */
@@ -313,17 +310,36 @@ h1::after {
 #beforefooter .fab:hover {
     transition: transform .3s;
     transform: scale(1.2);
-    color: #8d0000;
+    color: #790303;
 }
 
-#footer .fab:hover {
+#footericons .fab:hover {
     transition: transform .3s;
     transform: scale(1.2);
-    color: #8d0000;
+    color: #790303;
 }
 
+/* Screens with 576px or less will display the beforefooter differently */
+@media screen and (max-width: 576px) {
+    #beforefooter li .fab {
+        font-size: 50px;
+        display: unset;
+        float: none;
+    }
+    #beforefooter li em {
+        color: #5c5c5c;
+    }
+    #beforefooter {
+        width: 100%;
+    }
+    #beforefooter li {
+        margin-top: -30px;
+        margin-bottom: -30px;
+    }
+    
+}
 /* This targets the anchors in the footer */
-#footer a {
+#footericons a {
     text-decoration: none;
     color: #1d1d22;
     list-style: none;
@@ -366,6 +382,18 @@ h1::after {
     color: rgb(141, 141, 141);
     font-size: small;
 }
+
+/* Targets the footer buttons when screen size is 576px or less */
+@media screen and (max-width: 576px) {
+    #footer {
+        width: 100%;
+    }
+    #footer li {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 /**** END Before footer and Footer Styling ****/
 
 /**** Sidebar STYLING ****/
@@ -382,12 +410,14 @@ h1::after {
     font-weight: 700;
     display: block;
 }
+#sidebar a {
+    text-decoration: none;
+}
 .sidebar li {
     list-style: none;
     text-decoration: none;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.8);
-    background-color: rgb(221, 221, 221);
     padding: 0.5vw;
 }
 .sidebar li:hover {
@@ -396,6 +426,7 @@ h1::after {
 }
 .sidebar li a {
     color: black;
+    text-decoration: none;
 }
 .sidebar li:hover .fab, a {
     transition: transform .5s;
@@ -408,9 +439,7 @@ h1::after {
         width: 100%;
         height: 20vw;
         padding: 1vw;
-        text-align: center;
-        margin-right: auto;
-        margin-left: auto;
+        float: left;
         top: 0;
     }
     .sidebar li {
@@ -418,14 +447,15 @@ h1::after {
         list-style: none;
         text-decoration: none;
         padding: 1vw;
-        text-align: center;
-        
+        color: #5c5c5c;
     }
     .container-fluid #sidebarrow {
         width: 100%;
-        margin-right: auto;
-        margin-left: auto;
+        float: left;
         top: 0;
+    }
+    .sidebar li .fab {
+        color: #f4f4f4;
     }
 }
 @media screen and (max-width: 676px) {
@@ -442,9 +472,13 @@ h1::after {
         padding: 1vw;
         float: left;
         width: 100%;
+        color: #5c5c5c;
     }
     .container-fluid #sidebarrow {
         top: 0;
+    }
+    .sidebar li .fab {
+        color: white;
     }
 }
 /**** END SIDEBAR STYLING ****/
@@ -487,8 +521,8 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: rgb(189, 189, 189); /* Turns the background of the submit button white when the user hovers over it */
     color: black; /* Turns the font black when hovered over */
-    transform: scale(1.3); /* Makes the button increase 1.5 times in size */
-    transition: transform 1.1s; /* Makes the transform effect last 1.5 seconds */
+    transform: scale(1.3); /* Makes the button increase 1.3 times in size */
+    transition: transform .3s; /* Makes the transform effect last .3 seconds */
 }
 
 /* Form element */
@@ -498,4 +532,190 @@ form {
     padding: 1vw; /* Adds padding to the contact form */
     font-family: 'Lucida Console', sans-serif;
 }
+
+/* Targets the image on the contact page */
+.contactimg {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
 /**** END CONTACT STYLING ****/
+
+/**** MODAL STYLING ABOUT PAGE ****/
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* targets the thumbnail images, making them smaller and float left */
+.column {
+    float: left;
+    width: 12%;
+}
+/* Targets the thumbnail images appart the first thumbnail image! */
+.columnmargin {
+    margin-left: -24px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 22;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+/* Modal Content */
+.modal-content,
+.modal-content .container-fluid {
+    position: relative;
+    background-color: #030303;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1450px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid #999;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgb(235, 235, 235);
+}
+
+.mySlides {
+    display: none;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(168, 168, 168, 0.8);
+    color: rgb(12, 12, 19);
+}
+
+/* Number text (1/6 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 17px;
+}
+/* Targets the thumbnail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+/* How fast shadow appears when images are howered */
+img.hover-shadow {
+    transition: 0.3s;
+}
+/* Targets all images with this class and applies shadow */
+.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* When screen is 762px or smaller, the close button is smaller */
+@media (max-width: 762px) {
+    .btn-close {
+        font-size: 15px;
+    }
+}
+
+/**** END MODAL STYLING ****/
+
+/* CONTACT PAGE EMAIL CARD */
+/* Targets the Send Email card column */
+.row .col-sm-9 {
+    margin-left: 90px;
+}
+
+/* Targets the Send Email card */
+.row .col-sm-9 .card {
+    background-color: #ebebeb;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Targets the Send Email card Button */
+.text-center .btn {
+    color: white;
+    padding: 4px 70px;
+    border-radius: 25px;
+}
+/* Targets the send Email card button when hovered */
+.text-center .btn:hover {
+    color: #790303;
+    font-weight: bold;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+/* Targets the icon inside the button on Send Email Card */
+.text-center .btn .fa-location-arrow {
+    font-size: 18px;
+}
+
+/* Targets the Send Email card when screen is 1000px or smaller */
+@media (max-width: 1000px) {
+    .text-center .btn {
+        padding: 4px 40px;
+    }
+}
+
+/* Targets the Send Email card when screen is 700px or smaller */
+@media (max-width: 750px) {
+    .row .col-sm-9 {
+        margin: auto;
+    }
+    .text-center .btn {
+        padding: 4px 70px;
+    }
+}
